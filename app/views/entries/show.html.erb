@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>List:</b>
+  <%= @entry.list.name %>
+</p>
+
+<p>
+  <b>Item:</b>
+  <%= @entry.item.name %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @entry.quantity %>
+</p>
+
+<p>
+  <b>Bought:</b>
+  <%= @entry.bought %>
+</p>
+
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', @entry.list %>

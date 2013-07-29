@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<ul>
+  <li><b>Name:</b>
+  <%= @item.name %></li>
+  <li><b>Lowest Price: </b>
+  $<%= @item.lowest_price.to_s %>/<%= @item.unit.to_s %></li>
+  <li><b>Last Price: $</b>
+  $<%= @item.last_price.to_s %>/<%= @item.unit.to_s %></li>
+</ul>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
