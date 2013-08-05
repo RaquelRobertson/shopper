@@ -1,9 +1,9 @@
 Shopper::Application.routes.draw do
 
-  resources :lists, :has_many => :items through :entries 
-  
-  resources :items, :has_many => :lists through :entries
-
+  resources :entries
+  resources :lists do
+    resources :items
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+list = List.find_or_create_by_name("First Shopping List")
+item = list.items.first
+item ||= list.items.create(name: "Eggs", lowest_price: 2.00, last_price: 2.35)
