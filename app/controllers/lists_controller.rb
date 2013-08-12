@@ -1,4 +1,7 @@
 class ListsController < ApplicationController
+
+  helper_method :entries
+
   # GET /lists
   # GET /lists.json
   def index
@@ -80,4 +83,15 @@ class ListsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  protected
+
+  def list
+    List.find(params[:id])
+  end
+
+  def entries
+    list.entries
+  end
+
 end

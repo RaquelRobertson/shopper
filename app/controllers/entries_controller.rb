@@ -36,6 +36,7 @@ class EntriesController < ApplicationController
   # GET /entries/1/edit
   def edit
     @entry = Entry.find(params[:id])
+    @list = @entry.list
   end
 
   # POST /entries

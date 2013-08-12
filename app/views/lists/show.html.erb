@@ -5,7 +5,7 @@
   <%= @list.name %>
 </p>
 <p>
-<% @list.entries.each do |entry| %>
+<% entries.each do |entry| %>
   <tr>
     <td><%= entry.item.name %></td>
     <td><%= entry.quantity %></td>
