@@ -16,13 +16,13 @@
     <% end %>
     <td><%= link_to 'Show', entry %></td>
     <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-    <td><%= link_to 'Delete', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Remove from list', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
   <br>
 <% end %>
 
 
 
-
-<%= link_to 'Edit', edit_list_path(list) %> |
+<%= link_to 'Add New Entry  ', new_entry_path(list.id, nil) %>
+<%= link_to 'Edit', edit_list_path(@list) %> |
 <%= link_to 'Back', lists_path %>

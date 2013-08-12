@@ -13,13 +13,13 @@
   
   <p>
     <b>Name:</b>
-    <%= @list.name %>
-</p>
+    <%= List.find(@entry.list_id).name %>
+  </p>
 
-  <div class="field">
+ <!-- <div class="field">
     <%= f.label :list_id %><br />
     <%= f.text_field :list_id %>
-  </div>
+  </div> -->
   <div class="field">
     <%= f.label :item_id %><br />
     <%= f.text_field :item_id %>
