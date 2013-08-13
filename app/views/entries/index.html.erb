@@ -2,7 +2,6 @@
 
 <table>
   <tr>
-    <th>List</th>
     <th>Item</th>
     <th>Quantity</th>
     <th>Bought</th>
@@ -13,8 +12,7 @@
 
 <% entries.each do |entry| %>
   <tr>
-    <td><%= entry.list_id %></td>
-    <td><%= entry.item_id %></td>
+    <td><%= entry.item ? entry.item.name : 'Unknown' %></td>
     <td><%= entry.quantity %></td>
     <td><%= entry.bought %></td>
     <td><%= link_to 'Show', list_entry_path(list, entry) %></td>
