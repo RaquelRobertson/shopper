@@ -1,4 +1,4 @@
-<h1>Master Shopping List</h1>
+<h1>Shopping List for <%= list.name %></h1>
 
 <table>
   <tr>
@@ -11,19 +11,19 @@
     <th></th>
   </tr>
 
-<% @entries.each do |entry| %>
+<% entries.each do |entry| %>
   <tr>
     <td><%= entry.list_id %></td>
     <td><%= entry.item_id %></td>
     <td><%= entry.quantity %></td>
     <td><%= entry.bought %></td>
-    <td><%= link_to 'Show', entry %></td>
-    <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-    <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', list_entry_path(list, entry) %></td>
+    <td><%= link_to 'Edit', edit_list_entry_path(list, entry) %></td>
+    <td><%= link_to 'Destroy', list_entry_path(list, entry), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Entry', new_entry_path %>
+<%= link_to 'New Entry', new_list_entry_path(list) %>

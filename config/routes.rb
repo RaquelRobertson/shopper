@@ -1,8 +1,8 @@
 Shopper::Application.routes.draw do
 
-  resources :entries
   resources :lists do
     resources :items
+    resources :entries
   end
 
   # The priority is based upon order of creation:

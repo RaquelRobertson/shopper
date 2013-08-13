@@ -2,24 +2,24 @@
 
 <p>
   <b>List:</b>
-  <%= @entry.list.name %>
+  <%= entry.list.name %>
 </p>
 
 <p>
   <b>Item:</b>
-  <%= @entry.item.name %>
+  <!-- entry.item.name -->
 </p>
 
 <p>
   <b>Quantity:</b>
-  <%= @entry.quantity %>
+  <%= entry.quantity %>
 </p>
 
 <p>
   <b>Bought:</b>
-  <%= @entry.bought %>
+  <%= entry.bought %>
 </p>
 
 
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', @entry.list %>
+<%= link_to 'Edit', edit_list_entry_path(list, entry) %> |
+<%= link_to 'Back', list_entries_path(list) %>
