@@ -23,7 +23,9 @@ class EntriesController < ApplicationController
   # GET /list/:list_id/entries/new
   # GET /list/:list_id/entries/new.json
   def new
-    @entry = list.entries.build
+    @entry = list.entries.build.tap do |entry|
+      entry.item = Item.new
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -83,7 +85,9 @@ class EntriesController < ApplicationController
   end
 
   def entry
-    @entry ||= list.entries.find(params[:id])
+    @entry ||= list.entries.find(params[:id]).tap do |entry|
+      entry.item ||= Item.new
+    end
   end
 
   def list
