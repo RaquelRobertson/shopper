@@ -10,10 +10,10 @@ class ItemCatalogController < ApplicationController
   protected
 
   def items
-    if params[:q].present?
-      @items ||= Item.where("lower(name) LIKE lower(?)", "%#{params[:q]}%")
+    if params[:term].present?
+      @items ||= Item.where("lower(name) LIKE lower(?)", "%#{params[:term]}%").order(:name)
     else
-      Item.all
+      Item.order(:name)
     end
   end
 
