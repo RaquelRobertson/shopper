@@ -1,5 +1,6 @@
 Shopper::Application.routes.draw do
 
+  resources :item_catalog, only: [:index]
   resources :lists do
     resources :items
     resources :entries
