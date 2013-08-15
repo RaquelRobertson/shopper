@@ -7,7 +7,7 @@
 <p>
 <% entries.each do |entry| %>
   <tr>
-    <td><%= entry.item ? entry.item.name : '' %></td>
+    <td><%= entry.item ? entry.item.name + "(#{entry.item.id})": 'Unknown' %></td>
     <td><%= entry.quantity %></td>
     <% if entry.bought %>
       <td>#</td>

@@ -44,7 +44,7 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if entry.save
-        format.html { redirect_to [list, entry], notice: 'Entry was successfully created.' }
+        format.html { redirect_to list, notice: 'Entry was successfully created.' }
         format.json { render json: entry, status: :created, location: [list, entry] }
       else
         format.html { render action: "new" }
