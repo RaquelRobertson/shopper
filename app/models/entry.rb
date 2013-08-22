@@ -7,7 +7,8 @@ class Entry < ActiveRecord::Base
   accepts_nested_attributes_for :item, allow_destroy: true, reject_if: :all_blank
 
   def autosave_associated_records_for_item
-    if new_item = Item.find_by_name(item.name)
+    if new_item = Item.where("lower(name) LIKE lower(?)", item.name.strip).first
+    # if new_item = Item.find_by_name(item.name)
       self.item = new_item
     end
     self.item.save!
