@@ -10,14 +10,15 @@
     <tr>
       <td><%= entry.item ? entry.item.name : 'Unknown' %></td>
       <td><%= entry.quantity %></td>
-      <% if entry.bought %>
-        <td>true</td>
-      <% else %>
-        <td>false</td>
-      <% end %>
-      <td><%= link_to 'Show', list_entry_path(list, entry) %></td>
-      <td><%= link_to 'Edit', edit_list_entry_path(list, entry) %></td>
-      <td><%= link_to 'Remove from list', list_entry_path(list, entry), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td>
+        <%= form_for [list, entry], remote: true do |f| %>
+          <%= f.check_box :bought, class: "entry_bought" %>
+        <% end %>
+      </td>
+      <!-- Remove show function, unnecessary
+      <td><%= link_to 'Show', list_entry_path(list, entry) %></td> --> 
+      <td><%= link_to 'Edit', edit_list_entry_path(list, entry), class: "button tiny secondary" %></td>
+      <td><%= link_to 'X', list_entry_path(list, entry), class: "button tiny secondary", method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>

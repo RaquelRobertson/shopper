@@ -60,9 +60,11 @@ class EntriesController < ApplicationController
       if entry.update_attributes(params[:entry])
         format.html { redirect_to list, notice: 'Entry was successfully updated.' }
         format.json { head :no_content }
+        format.js
       else
         format.html { render action: "edit" }
         format.json { render json: entry.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
